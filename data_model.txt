@@ -1,0 +1,62 @@
+
+
+    Authors
+
+    username:string [unique, 4-12 chars, present]
+    email:string [unique, present]
+    password:string [6-16 chars, present]
+    id:integer
+    created_at:datetime
+    updated_at:datetime
+
+    has_many posts
+
+  Posts
+
+    title:string [unique, present]
+    body:text [present]
+    author_id:integer [present]
+    id:integer
+    created_at:datetime
+    updated_at:datetime
+
+    belongs_to author
+
+1. Courses
+
+    title:string [unique, present]
+    description:text [present]
+
+    has_many lessons
+
+  Lessons
+
+    title:string [unique, present]
+    body:text [present]
+
+    belongs_to course
+
+2. Profile
+
+    username:string [unique, 4-12 chars, present]
+    email:string [unique, present]
+    body:text [present]
+
+    has_one location
+    has_one demographic
+
+  Locations
+    city:text [present]
+    state:text [present]
+    country:text [present]
+
+    belongs_to profile
+
+  Demographics
+
+    age:text [present]
+    gender:text [2 chars, present]
+
+    belongs_to profile
+
+3. 
